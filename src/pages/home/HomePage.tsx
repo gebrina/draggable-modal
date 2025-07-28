@@ -1,9 +1,13 @@
-import { StyledPage, Title } from "./HomePage.style";
+import { Page } from "../../common";
+import { Button, PageWrapper, Title } from "./HomePage.style";
 
 export const HomePage = () => {
   return (
-    <StyledPage>
-      <Title>Draggable</Title>
-    </StyledPage>
+    <Page>
+      <PageWrapper>
+        <Title>Draggable Modal</Title>
+        <Button>Show Modal</Button>
+      </PageWrapper>
+    </Page>
   );
 };
