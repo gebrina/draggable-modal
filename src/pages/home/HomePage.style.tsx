@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "motion/react";
+import { Page } from "../../common";
 
-export const Page = styled(motion.div)``;
+export const StyledPage = styled(Page)``;
 
-export const PageTitle = styled(motion.h1)``;
+export const Title = styled(motion.h1)``;

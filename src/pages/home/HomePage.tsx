@@ -1,9 +1,9 @@
-import { Page, PageTitle } from "./HomePage.style";
+import { StyledPage, Title } from "./HomePage.style";
 
 export const HomePage = () => {
   return (
-    <Page>
-      <PageTitle>Draggable Modal</PageTitle>
-    </Page>
+    <StyledPage>
+      <Title>Draggable</Title>
+    </StyledPage>
   );
 };

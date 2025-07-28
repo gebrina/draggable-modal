@@ -1,8 +1,14 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HomePage } from "./pages/home";
+import { NotFoundPage } from "./pages/not-found";
+
 export const App = () => {
   return (
-    <div>
-      <h1>React Draggable Modal</h1>
-      <h3>Cool</h3>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
