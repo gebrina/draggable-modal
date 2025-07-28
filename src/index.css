@@ -2,13 +2,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 :root {
-  --title-color: rgb(240, 5, 166);
-  --text-color: rgb(160, 180, 250);
+  --primary: rgb(240, 179, 221);
+  --secondary: rgb(198, 27, 104);
+  --tertiary: rgb(2, 16, 32);
   --bg-color: rgb(1, 7, 29);
   --title-font-size: 3rem;
   --text-font-size: 1.5rem;
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
+  user-select: none;
 }
 
 * {
@@ -18,7 +20,6 @@
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
   line-height: 40px;
+  overflow: hidden;
 }
