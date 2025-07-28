@@ -1,13 +1,13 @@
 import { Page } from "../../common";
-import { Button, PageWrapper, Title } from "./HomePage.style";
+import { Button, PageContent, Title } from "./HomePage.style";
 
 export const HomePage = () => {
   return (
     <Page>
-      <PageWrapper>
+      <PageContent>
         <Title>Draggable Modal</Title>
         <Button>Show Modal</Button>
-      </PageWrapper>
+      </PageContent>
     </Page>
   );
 };

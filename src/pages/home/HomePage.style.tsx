@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import { motion } from "motion/react";
 
-export const PageWrapper = styled.div`
-  max-width: 600px;
+export const PageContent = styled.div`
+  max-width: 700px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -17,6 +17,8 @@ export const Title = styled(motion.h1)`
   text-transform: uppercase;
   word-spacing: 20px;
   text-align: center;
+  padding: 1rem;
+  box-shadow: 0.1rem 0.05rem 0.1rem var(--primary);
 `;
 
 export const Button = styled(motion.button)`
@@ -30,6 +32,7 @@ export const Button = styled(motion.button)`
   color: var(--secondary);
   border: none;
   border-radius: 0.5rem;
+  margin: 1rem;
   box-shadow: 0.3rem 0.3rem 0.3rem var(--primary),
     -0.3rem -0.3rem 0.3rem var(--secondary);
   &:hover {
