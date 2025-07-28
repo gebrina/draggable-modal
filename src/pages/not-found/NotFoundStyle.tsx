@@ -22,6 +22,7 @@ export const Message = styled(motion.p)`
 
 export const Title = styled(motion.h1)`
   font-size: 4rem;
+  line-height: 4rem;
 `;
 
 export const StyledLink = styled(Link)`
