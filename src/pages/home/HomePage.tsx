@@ -18,8 +18,10 @@ export const HomePage = () => {
 
   const modalContent = (
     <ModalContent>
+      {`
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit recusandae
       eos nisi tempora nulla repudiandae. Ab eum aliquam optio facere.
+     `.repeat(100)}
     </ModalContent>
   );
 

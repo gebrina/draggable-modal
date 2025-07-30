@@ -7,22 +7,37 @@ export const ModalHeader = styled.div`
   align-items: center;
   background-color: var(--secondary);
   color: var(--tertiary);
-  padding: 0.1rem 0.5rem;
-  flex: 0.2;
+  padding: 0 0.5rem;
+  min-height: 4rem;
+
   & svg.close-btn {
-    font-size: 1.4rem;
+    font-size: 2.5rem;
     cursor: pointer;
+    padding: 0.5rem;
+    &:hover {
+      border-radius: 0.3rem;
+      color: var(--primary);
+      background-color: var(--tertiary);
+    }
+  }
+
+  @media (min-width: 500px) {
+    h1 {
+      font-size: 1.3rem;
+    }
   }
 `;
 
 export const ModalContent = styled.div`
-  flex: 2;
+  flex: 1;
   padding: 0.5rem;
+  overflow: auto;
 `;
 
 export const ModalWrapper = styled(motion.div)`
-  box-shadow: 1rem 0.1rem 2rem 0.1rem var(--primary);
+  box-shadow: 0.1rem 0.1rem 2rem 0.1rem var(--secondary);
   min-height: 30rem;
+  max-height: 35rem;
   position: fixed;
   background-color: var(--tertiary);
   display: flex;
@@ -31,6 +46,12 @@ export const ModalWrapper = styled(motion.div)`
   min-width: 300px;
   width: 60%;
   left: 20%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  @media (min-width: 700px) {
+    width: 80%;
+    left: 10%;
+  }
 `;
 
 export const ModalFooter = styled(motion.div)`

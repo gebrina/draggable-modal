@@ -23,4 +23,8 @@ export const Button = styled(motion.button)<TButtonProps>`
     color: ${({ variant }) =>
       variant === "primary" ? "var(--secondary)" : "var(--primary)"};
   }
+
+  @media (min-width: 500px) {
+    font-size: 1rem;
+  }
 `;
