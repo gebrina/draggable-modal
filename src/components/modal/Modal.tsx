@@ -26,7 +26,7 @@ export const Modal: FC<TModalProps> = ({
     visible && (
       <ModalWrapper>
         <ModalHeader>
-          <h1>{title}</h1> <FaX onClick={onClose} />
+          <h1>{title}</h1> <FaX className="close-btn" onClick={onClose} />
         </ModalHeader>
         <ModalContent>{children}</ModalContent>
         <ModalFooter>{footer}</ModalFooter>

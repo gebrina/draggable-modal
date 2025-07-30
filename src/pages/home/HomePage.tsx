@@ -2,7 +2,12 @@ import { Button } from "@cpts/button";
 import { useState } from "react";
 import { Page } from "../../common";
 import { Modal, TModalProps } from "../../components/modal";
-import { PageContent, Title } from "./HomePage.style";
+import {
+  ModalContent,
+  ModalFooter,
+  PageContent,
+  Title,
+} from "./HomePage.style";
 
 export const HomePage = () => {
   const [visible, setVisible] = useState(true);
@@ -12,21 +17,21 @@ export const HomePage = () => {
   };
 
   const modalContent = (
-    <p>
+    <ModalContent>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit recusandae
       eos nisi tempora nulla repudiandae. Ab eum aliquam optio facere.
-    </p>
+    </ModalContent>
   );
 
   const modalFooter = (
-    <div>
+    <ModalFooter>
       <Button
         variant="primary"
         onClick={handleModalClose}
         label="Proceed to Payment"
       />
       <Button variant="secondary" onClick={handleModalClose} label="Reject" />
-    </div>
+    </ModalFooter>
   );
 
   const modalProps: TModalProps = {
@@ -45,7 +50,7 @@ export const HomePage = () => {
           variant="primary"
           label="Show Modale"
           onClick={() => setVisible(true)}
-        />{" "}
+        />
         {visible && <Modal {...modalProps} />}
       </PageContent>
     </Page>

@@ -9,10 +9,15 @@ export const ModalHeader = styled.div`
   color: var(--tertiary);
   padding: 0.1rem 0.5rem;
   flex: 0.2;
+  & svg.close-btn {
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
 `;
 
 export const ModalContent = styled.div`
   flex: 2;
+  padding: 0.5rem;
 `;
 
 export const ModalWrapper = styled(motion.div)`
@@ -23,8 +28,12 @@ export const ModalWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-width: 300px;
+  width: 60%;
+  left: 20%;
 `;
 
 export const ModalFooter = styled(motion.div)`
-  margin: 0;
+  background-color: var(--bg-color);
+  padding: 0.5rem;
 `;
