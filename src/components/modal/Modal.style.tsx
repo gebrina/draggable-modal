@@ -45,12 +45,18 @@ export const ModalWrapper = styled(motion.div)`
   justify-content: space-between;
   min-width: 300px;
   width: 60%;
-  left: 20%;
+  left: 50%;
   border-radius: 0.5rem;
   overflow: hidden;
+
   @media (min-width: 700px) {
     width: 80%;
     left: 10%;
+  }
+
+  @media (min-width: 1000px) {
+    width: 70%;
+    left: 15%;
   }
 `;
 

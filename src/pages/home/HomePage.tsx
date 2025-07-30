@@ -10,7 +10,7 @@ import {
 } from "./HomePage.style";
 
 export const HomePage = () => {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   const handleModalClose = () => {
     setVisible(false);
@@ -50,10 +50,10 @@ export const HomePage = () => {
         <Title>Draggable Modal</Title>
         <Button
           variant="primary"
-          label="Show Modale"
+          label="Show Modal"
           onClick={() => setVisible(true)}
         />
-        {visible && <Modal {...modalProps} />}
+        <Modal {...modalProps} />
       </PageContent>
     </Page>
   );

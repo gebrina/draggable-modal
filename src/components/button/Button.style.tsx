@@ -15,6 +15,7 @@ export const Button = styled(motion.button)<TButtonProps>`
   font-size: 1.2rem;
   font-weight: bold;
   color: var(--tertiary);
+  width: max-content;
   background-color: ${({ variant }) =>
     variant === "primary" ? "var(--primary)" : "var(--secondary)"};
   &:hover {
