@@ -21,7 +21,9 @@ export const Title = styled(motion.h1)`
   box-shadow: 0.1rem 0.05rem 0.1rem var(--primary);
 `;
 
-export const ModalContent = styled.div``;
+export const ModalContent = styled.div`
+  font-size: 1.1rem;
+`;
 
 export const ModalFooter = styled.div`
   display: flex;

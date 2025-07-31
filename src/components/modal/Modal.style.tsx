@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "motion/react";
 
-export const ModalHeader = styled.div`
+export const ModalHeader = styled.div<{ isDraggable?: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,6 +9,7 @@ export const ModalHeader = styled.div`
   color: var(--tertiary);
   padding: 0 0.5rem;
   min-height: 4rem;
+  cursor: ${({ isDraggable }) => (isDraggable ? "move" : "default")};
 
   & svg.close-btn {
     font-size: 2.5rem;
@@ -38,8 +39,8 @@ export const ModalOverlay = styled.div`
 
 export const ModalContent = styled.div`
   flex: 1;
-  padding: 0.5rem;
-  overflow: auto;
+  padding: 1rem;
+  overflow-y: auto;
 `;
 
 export const ModalWrapper = styled(motion.div)`
