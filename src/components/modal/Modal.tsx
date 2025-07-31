@@ -1,5 +1,5 @@
 import { AnimatePresence, Variants } from "motion/react";
-import { FC, ReactNode, useEffect, useRef } from "react";
+import { FC, KeyboardEvent, ReactNode, useEffect, useRef } from "react";
 import { FaX } from "react-icons/fa6";
 import {
   ModalContent,
@@ -103,6 +103,12 @@ export const Modal: FC<TModalProps> = ({
     };
   }, [draggable, visible]);
 
+  const handleCloseKeyDown = (event: KeyboardEvent<HTMLOrSVGElement>) => {
+    if (event.key === "Enter") {
+      onClose();
+    }
+  };
+
   return (
     <AnimatePresence>
       {visible && (
@@ -122,6 +128,7 @@ export const Modal: FC<TModalProps> = ({
                 role="button"
                 className="close-btn"
                 onClick={onClose}
+                onKeyDown={handleCloseKeyDown}
               />
             </ModalHeader>
             <ModalContent>{children}</ModalContent>
