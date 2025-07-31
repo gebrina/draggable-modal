@@ -6,10 +6,14 @@ export type TButtonProps = {
   onClick: () => void;
 };
 
-export const Button = ({ label, variant, onClick }: TButtonProps) => {
-  return (
-    <StyledButton variant={variant} onClick={onClick}>
-      {label}
-    </StyledButton>
-  );
-};
+export const Button = ({ label, variant, onClick }: TButtonProps) => (
+  <StyledButton
+    whileTap={{
+      scale: 0.9,
+    }}
+    variant={variant}
+    onClick={onClick}
+  >
+    {label}
+  </StyledButton>
+);

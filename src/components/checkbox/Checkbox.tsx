@@ -21,6 +21,10 @@ export const Checkbox = ({ checked, label, id, onChange }: TCheboxProps) => {
   return (
     <CheckboxWrapper
       id={id}
+      whileTap={{
+        scale: 0.9,
+        opacity: 0.8,
+      }}
       onKeyDown={handleKeyDown}
       onClick={handleCheckboxClick}
     >

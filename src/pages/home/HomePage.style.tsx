@@ -33,6 +33,6 @@ export const ModalFooter = styled.div`
 
 export const FlexContainer = styled.div`
   display: flex;
-  gap: 1rem;
+  column-gap: 1rem;
   padding: 1rem;
 `;

@@ -53,7 +53,16 @@ export const HomePage = () => {
   return (
     <Page>
       <PageContent>
-        <Title>Draggable Modal</Title>
+        <Title
+          initial={{
+            x: -100,
+          }}
+          animate={{
+            x: 0,
+          }}
+        >
+          Draggable Modal
+        </Title>
         <FlexContainer>
           <Button
             variant="primary"

@@ -8,10 +8,8 @@ export const CheckboxWrapper = styled(motion.div)`
   padding: 0.5rem;
 `;
 
-export const Label = styled(motion.label)``;
-
-export const Input = styled(motion.input)`
-  display: none;
+export const Label = styled(motion.label)`
+  font-size: 1.3rem;
 `;
 
 export const InputChekbox = styled.div`
