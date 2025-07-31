@@ -1,4 +1,5 @@
 import { Button } from "@cpts/button";
+import { Checkbox } from "@cpts/checkbox";
 import { useState } from "react";
 import { Page } from "../../common";
 import { Modal, TModalProps } from "../../components/modal";
@@ -11,6 +12,7 @@ import {
 
 export const HomePage = () => {
   const [visible, setVisible] = useState(false);
+  const [checked, setChecked] = useState(false);
 
   const handleModalClose = () => {
     setVisible(false);
@@ -55,6 +57,12 @@ export const HomePage = () => {
           variant="primary"
           label="Show Modal"
           onClick={() => setVisible(true)}
+        />
+        <Checkbox
+          label="Draggable"
+          id="draggble-id"
+          checked={checked}
+          onChange={(checked) => setChecked(checked)}
         />
         <Modal {...modalProps} />
       </PageContent>
