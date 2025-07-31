@@ -1,5 +1,11 @@
 import { AnimatePresence, Variants } from "motion/react";
-import { FC, KeyboardEvent, ReactNode, useEffect, useRef } from "react";
+import {
+  FC,
+  KeyboardEvent as JSXKeyboardEvent,
+  ReactNode,
+  useEffect,
+  useRef,
+} from "react";
 import { FaX } from "react-icons/fa6";
 import {
   ModalContent,
@@ -45,11 +51,10 @@ export const Modal: FC<TModalProps> = ({
   const modalWrapperRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (!draggable || !modalHeaderRef.current || !modalWrapperRef.current)
-      return;
-
     const modalHeader = modalHeaderRef.current;
     const modalWrapper = modalWrapperRef.current;
+
+    if (!draggable || !modalHeader || !modalWrapper) return;
 
     let initialX = 0,
       initialY = 0,
@@ -94,8 +99,6 @@ export const Modal: FC<TModalProps> = ({
     modalHeader.addEventListener("mousemove", handleMouseMove);
     modalHeader.addEventListener("mouseup", handleMouseUp);
 
-    console.log(modalHeader, modalWrapper);
-
     return () => {
       modalHeader.removeEventListener("mousedown", handleMouseDown);
       modalHeader.removeEventListener("mousemove", handleMouseMove);
@@ -103,8 +106,37 @@ export const Modal: FC<TModalProps> = ({
     };
   }, [draggable, visible]);
 
-  const handleCloseKeyDown = (event: KeyboardEvent<HTMLOrSVGElement>) => {
-    if (event.key === "Enter") {
+  useEffect(() => {
+    const modalWrapper = modalWrapperRef.current;
+    if (!modalWrapper) return;
+
+    const focusableElements = modalWrapper.querySelectorAll<HTMLElement>(
+      'button,[role="button"],a,[tabindex="0"]'
+    );
+    const lastIndex = focusableElements.length - 1;
+    const lastElement = focusableElements[lastIndex];
+    const firstElement = focusableElements[0];
+
+    const handleModalKeyDown = (e: KeyboardEvent) => {
+      const isTabPressed = e.key === "Tab" || e.charCode === 9;
+      if (!isTabPressed) return;
+
+      const focusedElement = document.activeElement;
+      if (focusedElement == lastElement) {
+        e.preventDefault();
+        firstElement.focus();
+      }
+    };
+
+    modalWrapper.addEventListener("keydown", handleModalKeyDown);
+
+    return () => {
+      modalWrapper.removeEventListener("keydown", handleModalKeyDown);
+    };
+  }, [visible]);
+
+  const handleCloseKeyDown = (e: JSXKeyboardEvent<HTMLOrSVGElement>) => {
+    if (e.key === "Enter" || e.keyCode === 13) {
       onClose();
     }
   };

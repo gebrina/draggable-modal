@@ -22,7 +22,8 @@ export const HomePage = () => {
        
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit recusandae
       eos nisi tempora nulla repudiandae. Ab eum aliquam optio facere.
-     `.repeat(10)}
+     `.repeat(3)}
+      <a href="#">Learn More</a>
     </ModalContent>
   );
 
