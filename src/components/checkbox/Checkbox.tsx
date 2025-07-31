@@ -1,5 +1,6 @@
 import { KeyboardEvent } from "react";
-import { CheckboxWrapper, Input, Label } from "./Checkbox.style";
+import { FaCheck } from "react-icons/fa6";
+import { CheckboxWrapper, InputChekbox, Label } from "./Checkbox.style";
 
 export type TCheboxProps = {
   checked: boolean;
@@ -15,16 +16,23 @@ export const Checkbox = ({ checked, label, id, onChange }: TCheboxProps) => {
     }
   };
 
+  const handleCheckboxClick = () => onChange(!checked);
+
   return (
-    <CheckboxWrapper>
-      <Input
-        type="checkbox"
-        id={id}
-        checked={checked}
-        onChange={() => onChange(!checked)}
-        onKeyDown={handleKeyDown}
-      />
-      <Label htmlFor={id}>{label}</Label>
+    <CheckboxWrapper
+      id={id}
+      onKeyDown={handleKeyDown}
+      onClick={handleCheckboxClick}
+    >
+      <InputChekbox
+        tabIndex={0}
+        aria-checked={checked}
+        aria-label={label}
+        role="checkbox"
+      >
+        {checked && <FaCheck />}
+      </InputChekbox>
+      <Label>{label}</Label>
     </CheckboxWrapper>
   );
 };
