@@ -28,6 +28,14 @@ export const ModalHeader = styled.div`
   }
 `;
 
+export const ModalOverlay = styled.div`
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  inset: 0;
+`;
+
 export const ModalContent = styled.div`
   flex: 1;
   padding: 0.5rem;
@@ -46,6 +54,7 @@ export const ModalWrapper = styled(motion.div)`
   min-width: 300px;
   width: 60%;
   left: 50%;
+  top: 3rem;
   border-radius: 0.5rem;
   overflow: hidden;
 

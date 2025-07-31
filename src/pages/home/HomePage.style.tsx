@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { motion } from "motion/react";
 
 export const PageContent = styled.div`
-  max-width: 700px;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   gap: 2rem;

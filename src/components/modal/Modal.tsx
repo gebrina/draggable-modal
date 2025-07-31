@@ -5,6 +5,7 @@ import {
   ModalContent,
   ModalFooter,
   ModalHeader,
+  ModalOverlay,
   ModalWrapper,
 } from "./Modal.style";
 
@@ -41,19 +42,22 @@ export const Modal: FC<TModalProps> = ({
   return (
     <AnimatePresence>
       {visible && (
-        <ModalWrapper
-          variants={modalVariants}
-          initial="hidden"
-          animate="visible"
-          exit="hidden"
-          key="modal"
-        >
-          <ModalHeader>
-            <h1>{title}</h1> <FaX className="close-btn" onClick={onClose} />
-          </ModalHeader>
-          <ModalContent>{children}</ModalContent>
-          <ModalFooter>{footer}</ModalFooter>
-        </ModalWrapper>
+        <ModalOverlay>
+          <ModalWrapper
+            variants={modalVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            key="modal"
+          >
+            <ModalHeader>
+              <h1>{title}</h1>{" "}
+              <FaX tabIndex={0} className="close-btn" onClick={onClose} />
+            </ModalHeader>
+            <ModalContent>{children}</ModalContent>
+            <ModalFooter>{footer}</ModalFooter>
+          </ModalWrapper>
+        </ModalOverlay>
       )}
     </AnimatePresence>
   );
