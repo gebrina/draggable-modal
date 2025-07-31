@@ -52,7 +52,12 @@ export const Modal: FC<TModalProps> = ({
           >
             <ModalHeader>
               <h1>{title}</h1>{" "}
-              <FaX tabIndex={0} className="close-btn" onClick={onClose} />
+              <FaX
+                tabIndex={0}
+                role="button"
+                className="close-btn"
+                onClick={onClose}
+              />
             </ModalHeader>
             <ModalContent>{children}</ModalContent>
             <ModalFooter>{footer}</ModalFooter>

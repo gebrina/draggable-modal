@@ -13,6 +13,7 @@ describe("<Button/>", () => {
 
     render(<Button {...btnProps} />);
     const button = screen.getByRole("button", { name: btnProps.label });
+
     fireEvent.click(button);
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
