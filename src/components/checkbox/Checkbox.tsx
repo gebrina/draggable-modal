@@ -21,7 +21,7 @@ export const Checkbox = ({ checked, label, id, onChange }: TCheboxProps) => {
         type="checkbox"
         id={id}
         checked={checked}
-        onChange={(e) => onChange(e.target.checked)}
+        onChange={() => onChange(!checked)}
         onKeyDown={handleKeyDown}
       />
       <Label htmlFor={id}>{label}</Label>
