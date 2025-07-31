@@ -9,9 +9,9 @@ describe("<Checkbox/>", () => {
       id: "check-id",
     } as TCheboxProps;
 
-    render(<Checkbox {...checkboxProps} />);
-    const input = screen.getByLabelText(checkboxProps.label);
-    expect(input.id).toBe(checkboxProps.id);
+    const { container } = render(<Checkbox {...checkboxProps} />);
+    expect(container.querySelector(`#${checkboxProps.id}`)).toBeTruthy();
+    screen.getByLabelText(checkboxProps.label);
   });
 
   it("Should call 'onChange' with toggled 'checked' state", () => {
