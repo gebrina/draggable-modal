@@ -11,7 +11,7 @@ describe("<Checkbox/>", () => {
 
     const { container } = render(<Checkbox {...checkboxProps} />);
     expect(container.querySelector(`#${checkboxProps.id}`)).toBeTruthy();
-    screen.getByLabelText(checkboxProps.label);
+    expect(screen.getByLabelText(checkboxProps.label)).toBeTruthy();
   });
 
   it("Should call 'onChange' with toggled 'checked' state", () => {

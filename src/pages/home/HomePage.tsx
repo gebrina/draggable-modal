@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Page } from "../../common";
 import { Modal, TModalProps } from "../../components/modal";
 import {
+  FlexContainer,
   ModalContent,
   ModalFooter,
   PageContent,
@@ -44,7 +45,7 @@ export const HomePage = () => {
     title: "Payment Information",
     onClose: handleModalClose,
     visible,
-    draggable: true,
+    draggable: checked,
     children: modalContent,
     footer: modalFooter,
   };
@@ -53,17 +54,19 @@ export const HomePage = () => {
     <Page>
       <PageContent>
         <Title>Draggable Modal</Title>
-        <Button
-          variant="primary"
-          label="Show Modal"
-          onClick={() => setVisible(true)}
-        />
-        <Checkbox
-          label="Draggable"
-          id="draggble-id"
-          checked={checked}
-          onChange={(checked) => setChecked(checked)}
-        />
+        <FlexContainer>
+          <Button
+            variant="primary"
+            label="Show Modal"
+            onClick={() => setVisible(true)}
+          />
+          <Checkbox
+            label="Draggable"
+            id="draggble-id"
+            checked={checked}
+            onChange={(checked) => setChecked(checked)}
+          />
+        </FlexContainer>
         <Modal {...modalProps} />
       </PageContent>
     </Page>

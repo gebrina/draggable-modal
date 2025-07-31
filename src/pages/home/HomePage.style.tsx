@@ -30,3 +30,9 @@ export const ModalFooter = styled.div`
   justify-content: flex-end;
   column-gap: 0.3rem;
 `;
+
+export const FlexContainer = styled.div`
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+`;
