@@ -117,6 +117,9 @@ export const Modal: FC<TModalProps> = ({
     const lastElement = focusableElements[lastIndex];
     const firstElement = focusableElements[0];
 
+    // Focus last focusable element by default, to ensure focus loop.
+    lastElement.focus();
+
     const handleModalKeyDown = (e: KeyboardEvent) => {
       const isTabPressed = e.key === "Tab" || e.charCode === 9;
       if (!isTabPressed) return;
