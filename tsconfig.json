@@ -18,7 +18,15 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Import alias*/
+    "baseUrl": ".",
+    "paths": {
+      "@cpts/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"],
+      "@common/*": ["src/common/*"]
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

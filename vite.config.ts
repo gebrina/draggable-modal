@@ -1,11 +1,24 @@
 import react from "@vitejs/plugin-react-swc";
-import { defineConfig } from "vite";
+import path from "path";
+import { defineConfig as defineViteConfig, mergeConfig } from "vite";
+import { defineConfig as defineVitestConfig } from "vitest/config";
 
-// https://vitejs.dev/config/
-export default defineConfig({
+const viteConfigs = defineViteConfig({
   plugins: [react()],
-  test: {
-    globals: true,
-    environment: "jsdom",
+  resolve: {
+    alias: {
+      "@cpts": path.resolve(__dirname, "src/components"),
+      "@pages": path.resolve(__dirname, "src/pages"),
+      "@common": path.resolve(__dirname, "src/common"),
+    },
   },
 });
+
+const vitestConfigs = defineVitestConfig({
+  test: {
+    environment: "jsdom",
+    globals: true,
+  },
+});
+
+export default mergeConfig(viteConfigs, vitestConfigs);

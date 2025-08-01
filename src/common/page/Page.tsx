@@ -6,6 +6,6 @@ export type TPageProps = {
   children: ReactNode;
 };
 
-export const Page: FC<TPageProps> = ({ className, children }) => {
-  return <PageWrapper className={className}>{children}</PageWrapper>;
-};
+export const Page: FC<TPageProps> = ({ className, children }) => (
+  <PageWrapper className={className}>{children}</PageWrapper>
+);

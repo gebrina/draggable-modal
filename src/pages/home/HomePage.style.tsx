@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { motion } from "motion/react";
 
 export const PageContent = styled.div`
-  max-width: 700px;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -21,23 +21,18 @@ export const Title = styled(motion.h1)`
   box-shadow: 0.1rem 0.05rem 0.1rem var(--primary);
 `;
 
-export const Button = styled(motion.button)`
-  padding: 5px;
-  font-size: 1.5rem;
-  width: max-content;
-  padding: 1rem 1.5rem;
-  cursor: pointer;
-  font-weight: bold;
-  background-color: var(--primary);
-  color: var(--secondary);
-  border: none;
-  border-radius: 0.5rem;
-  margin: 1rem;
-  box-shadow: 0.3rem 0.3rem 0.3rem var(--primary),
-    -0.3rem -0.3rem 0.3rem var(--secondary);
-  &:hover {
-    background-color: var(--secondary);
-    color: var(--primary);
-    box-shadow: none;
-  }
+export const ModalContent = styled.div`
+  font-size: 1.1rem;
+`;
+
+export const ModalFooter = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 0.3rem;
+`;
+
+export const FlexContainer = styled.div`
+  display: flex;
+  column-gap: 1rem;
+  padding: 1rem;
 `;

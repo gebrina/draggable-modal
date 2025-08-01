@@ -1,11 +1,17 @@
 /* Open Sans Font */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
-  --primary: rgb(240, 179, 221);
-  --secondary: rgb(198, 27, 104);
-  --tertiary: rgb(2, 16, 32);
-  --bg-color: rgb(1, 7, 29);
+  --primary: #1a2a80;
+  --secondary: #3b38a0;
+  --tertiary: #b2b0e8;
+  --bg-color: #7a85c1;
   --title-font-size: 3rem;
   --text-font-size: 1.5rem;
   font-size: 16px;
@@ -13,13 +19,18 @@
   user-select: none;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body {
+  line-height: 2rem;
+  overflow: hidden;
 }
 
-body {
-  line-height: 40px;
-  overflow: hidden;
+::-webkit-scrollbar {
+  width: 0.4rem;
+  background-color: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 0.3rem;
+  cursor: pointer;
 }
