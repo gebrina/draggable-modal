@@ -121,13 +121,21 @@ export const Modal: FC<TModalProps> = ({
     lastElement.focus();
 
     const handleModalKeyDown = (e: KeyboardEvent) => {
-      const isTabPressed = e.key === "Tab" || e.charCode === 9;
-      if (!isTabPressed) return;
+      const isTabPressed = e.key === "Tab" || e.keyCode === 9;
+      const isShiftKeyPressed = e.shiftKey;
+
+      if (!(isShiftKeyPressed || isTabPressed)) return;
 
       const focusedElement = document.activeElement;
-      if (focusedElement == lastElement) {
+
+      if (focusedElement === lastElement && !isShiftKeyPressed) {
         e.preventDefault();
         firstElement.focus();
+      }
+
+      if (focusedElement === firstElement && isShiftKeyPressed) {
+        e.preventDefault();
+        lastElement.focus();
       }
     };
 

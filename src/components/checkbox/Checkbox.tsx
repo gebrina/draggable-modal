@@ -11,7 +11,7 @@ export type TCheboxProps = {
 
 export const Checkbox = ({ checked, label, id, onChange }: TCheboxProps) => {
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" || e.charCode === 13) {
+    if (e.key === "Enter" || e.keyCode === 13) {
       onChange(!checked);
     }
   };
